@@ -48,7 +48,7 @@ const Stopwatch = () => {
   return (
     <div>
       <h1>StopWatch</h1>
-      <div style={{ display: "flex", margin: ".5rem" }}>
+      <div style={{ display: "flex" }}>
         <h3>Time:</h3>
         <h3 ref={refval}>0:00</h3>
       </div>
