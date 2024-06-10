@@ -7,6 +7,7 @@ const calculatetime = (val) => {
   let seconds = arr[1];
   let min = Number(minutes);
   let sec = Number(seconds);
+
   if (sec === 60) {
     min += 1;
     sec = 0;
@@ -15,7 +16,7 @@ const calculatetime = (val) => {
   let min1 = "";
   let sec1 = "";
   if (min.toString().length < 2) {
-    min1 = "0" + min;
+    min1 = min;
   } else {
     min1 = min;
   }
@@ -50,7 +51,7 @@ const Stopwatch = () => {
       <h1>Stopwatch</h1>
       {/* <div style={{ display: "flex" }}> */}
       <span>Time: </span>
-      <span ref={refval}> 0:00 </span>
+      <span ref={refval}>0:00 </span>
       {/* </div> */}
       <div>
         <button onClick={handlechange} className="btn">
