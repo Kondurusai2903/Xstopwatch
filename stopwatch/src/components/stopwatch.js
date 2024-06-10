@@ -31,13 +31,13 @@ const Stopwatch = () => {
   const [time, setTime] = useState(0);
   const handlechange = (e) => {
     let val = e.target.innerHTML;
-    if (val === "start") {
-      e.target.innerHTML = "stop";
+    if (val === "Start") {
+      e.target.innerHTML = "Stop";
       let t = refval;
       let timer = setInterval(calculatetime, 1000, t);
       setTime(timer);
     } else {
-      e.target.innerHTML = "start";
+      e.target.innerHTML = "Start";
       clearInterval(time);
     }
   };
@@ -47,17 +47,19 @@ const Stopwatch = () => {
   };
   return (
     <div>
-      <h1>StopWatch</h1>
-      <div style={{ display: "flex" }}>
-        <h3>Time:</h3>
-        <h3 ref={refval}>0:00</h3>
+      <h1>Stopwatch</h1>
+      {/* <div style={{ display: "flex" }}> */}
+      <span>Time: </span>
+      <span ref={refval}> 0:00 </span>
+      {/* </div> */}
+      <div>
+        <button onClick={handlechange} className="btn">
+          Start
+        </button>
+        <button onClick={handlereset} className="btn">
+          Reset
+        </button>
       </div>
-      <button onClick={handlechange} className="btn">
-        start
-      </button>
-      <button onClick={handlereset} className="btn">
-        reset
-      </button>
     </div>
   );
 };
