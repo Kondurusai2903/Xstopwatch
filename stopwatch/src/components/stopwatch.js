@@ -7,12 +7,12 @@ const calculatetime = (val) => {
   let seconds = arr[1];
   let min = Number(minutes);
   let sec = Number(seconds);
-
+  sec += 1;
   if (sec === 60) {
     min += 1;
     sec = 0;
   }
-  sec += 1;
+
   let min1 = "";
   let sec1 = "";
   if (min.toString().length < 2) {
